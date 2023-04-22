@@ -1,0 +1,27 @@
+<!-- 11.Write a JavaScript, that uses a loop, that searches a word in sentence held
+in an array, returning the index of the word. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Searching</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		search = prompt("Enter wors to search : ");
+		str = prompt("Enter String: ");
+		a = str.split(" ");
+		
+
+		for(i=0; i<a.length; i++)
+		{
+			if(a[i]==search)
+			{
+				document.write(i);
+			}
+		}
+
+	</script>
+</body>
+</html>

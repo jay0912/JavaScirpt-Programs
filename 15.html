@@ -1,0 +1,60 @@
+<!-- 15.Demonstrate User Defined Functions Using Java Script to find whether the 
+given number is prime or not. Demonstrate the use of array to find 
+maximum number.
+ -->
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Function & Array</title>
+ </head>
+ <body>
+ 	<script type="text/javascript">
+ 		
+ 		a = [];
+		size = parseInt(prompt("Enter the size of the array : "));
+		n = parseInt(prompt("Enter the number to check prime : "));
+		prime(n);
+
+		for(i=0; i<size; i++)
+		{
+				a[i] = prompt("a["+i+"] : ");
+		}
+
+		max = Math.max(...a);
+		// max = a[0];
+
+		// for(j=0; j<a.length; j++)
+		// {
+		// 	if(a[j]>max)
+		// 	{
+		// 		a[j] = max;
+		// 	}
+		// }
+
+		document.write("Maximum number in array is : "+max+"<br/>");
+
+		function prime(n)
+		{
+			flag = true;
+			for(i=2;i<n;i++)
+			{
+				if (n%i==0) 
+				{
+					flag=false;
+					break;
+				}
+			}
+			if (!flag) 
+			{
+				document.write("The given number is not prime number."+"<br/>");
+			}
+			else
+			{
+				document.write("The given number is a prime number."+"<br/>");
+			}
+		}
+
+ 	</script>
+ </body>
+ </html>

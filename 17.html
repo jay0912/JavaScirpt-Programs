@@ -1,0 +1,45 @@
+<!-- 17.WAP to create simple calculator using prompt and document.write
+method. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		n1 = parseInt(prompt("Enter first Number : "));
+		n2 = parseInt(prompt("Enter second Number : "));
+		op = prompt("Enter oprator : ");
+		result = 0;
+
+		switch(op)
+		{
+			case '+':
+				result = n1 + n2;
+				document.write(n1+" "+op+" "+n2+" = "+result);
+				break;
+
+			case '-':
+				result = n1 - n2;
+				document.write(n1+" "+op+" "+n2+" = "+result);
+				break;
+			
+			case '*':
+				result = n1 * n2;
+				document.write(n1+" "+op+" "+n2+" = "+result);
+				break;
+
+			case '/':
+				result = n1 / n2;
+				document.write(n1+" "+op+" "+n2+" = "+result);
+				break;
+				
+			default:
+				document.write("Invalid!!!");			
+		}
+
+	</script>
+</body>
+</html>

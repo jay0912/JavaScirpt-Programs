@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Armstrong</title>
+</head>
+<body>
+	<script type="text/javascript">
+		n = parseInt(prompt("Enter the number :"));
+		count=0;
+		temp = n;
+		on = n;
+		total=0;
+
+		while(temp>0)
+		{
+			temp = parseInt(temp/10);
+			count++;
+			document.write("Count="+count+"</br>");
+		}
+
+		for(j=1; j<=count; j++)
+		{
+			rem = 1;
+			for(k=1; k<=count ;k++){
+				rem=rem*(n%10);
+				document.write("Rem="+rem+"</br>");
+			}
+			n=parseInt(n/10);
+			document.write("n="+n+"</br>");
+			total=total+rem;
+		}
+		document.write(total+"</br>");
+		if(on==total)
+		{
+			document.write("The given number is armstrong.");
+		}
+		else
+		{
+			document.write("The given number is not armstrong.");
+		}
+	</script>
+</body>
+</html>

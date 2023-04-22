@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>Stop Watch</title>
+
+	<style type="text/css">
+		
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}	
+
+		body{
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #7D2Ae8;  
+		}	
+
+		.wrapper{
+			user-select: none;
+		}
+
+		.wrapper .time{
+			height: 100px;
+			background: #fff;
+			display: flex;
+			font-size: 40px;
+			align-items: center;
+			justify-content: center;
+			border-radius: 6px;
+			box-shadow: 10px 10px 20px rgba(0,0,0,0.9);
+			padding: 0 10px;
+		}
+
+		/*.wrapper .time span{
+			width: 100px;
+			text-align: center;
+			font-size: 50px;
+			font-weight: 500;
+			color: #333;
+		}
+
+		.time span.colon{
+			width: 10px;
+		}
+
+		.time span.ms-colon,
+		.time span.millisecond{
+			color: #7D2Ae8;
+		}*/
+
+		.wrapper .buttons{
+			text-align: center;
+			margin-top: 20px;  
+		}
+
+		.buttons button{
+			padding: 6px 16px;
+			outline: none;
+			border: none;
+			margin: 0 5px;
+			color: #7D2Ae8;
+			background: #fff;
+			font-size: 19px;
+			font-weight: 500;
+			border-radius: 4px; 
+			cursor: pointer;
+			box-shadow: 10px 10px 20px rgba(0,0,0,0.9);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="time" id="time1">
+            00:00:00:00
+        </div>
+		<!-- <div class="time">
+			<span class="hour">00</span>
+			<span class="colon">:</span>
+			<span class="minute">00</span>
+			<span class="colon">:</span>
+			<span class="second">00</span>
+			<span class="colon ms-colon">:</span>
+			<span class="millisecond">00</span>  
+		</div> -->
+		<div class="buttons">
+			<button class="start"  value="Start" onclick="StartTimer()">Start</button>
+			<button class="stop" value="Stop" onclick="StopTimer()">Stop</button>
+			<button class="reset" value="Reset" onclick="resetTimer()">Reset</button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		const time = document.getElementById('time1');
+		var hr=0;
+		var min=0;
+		var sec=0;
+		var millisecond=0;
+		var stoptime=true;
+		function StartTimer()
+		{
+			if(stoptime==true)
+			{
+				stoptime=false;
+				start();
+			}
+		}
+		function StopTimer()
+		{
+			if(stoptime==false)
+			{
+				stoptime=true;
+			}
+		}
+		function start()
+		{
+			if(stoptime==false)
+			{
+				millisecond=parseInt(millisecond);
+				sec=parseInt(sec);
+				min=parseInt(min);
+				hr=parseInt(hr);
+
+				millisecond = millisecond +1;
+				if (millisecond==99) 
+				{
+					sec = sec+1;
+					millisecond=0;
+				}
+				if(sec==60)
+				{
+					min=min+1;
+					sec=0;
+					millisecond=0;
+				}
+				if(min==60)
+				{
+					hr=hr+1;
+					min=0;
+					sec=0;
+					millisecond=0;
+				}
+				if(millisecond<10 || millisecond == 0)
+				{
+					millisecond = '0'+millisecond;
+				}
+				if(sec < 10 || sec == 0)
+				{
+					sec = '0'+sec;
+				}
+				if(min < 10 || min == 0)
+				{
+					min = '0'+min;
+				}
+				if(hr < 10 || hr == 0)
+				{
+					hr = '0'+hr;
+				}
+				time.innerHTML = hr +':'+min+':'+sec+':'+millisecond;
+				setTimeout("start()",10);
+			}
+		}
+		function resetTimer() {
+			time.innerHTML= "00:00:00:00";
+			stoptime=true;
+			millisecond=0;
+			sec=0;
+			min=0; 
+			hr=0;	
+		}
+
+	</script>
+</body>
+</html>

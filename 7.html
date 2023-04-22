@@ -1,0 +1,31 @@
+<!-- 7. WAP to check whether the given number (int) is palindrom or not. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Palindrom</title>
+</head>
+<body> 
+	<script type="text/javascript">
+		
+		n = parseInt(prompt("Enter number to check palindrom:"));
+		reverse = 0;
+		for(i=n; i>0;)
+		{
+			reminder = i%10;
+			reverse = reverse*10 + reminder;
+			i=parseInt(i/10);
+		}
+		document.write("reverse : "+reverse);
+		if(n == reverse)
+		{
+			document.write(n+" is Palindrom.");
+		}
+		else
+		{
+			document.write(n+" is not Palindrom.");	
+		}
+
+	</script>
+</body>
+</html>

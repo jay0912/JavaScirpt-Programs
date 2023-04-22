@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Attendance</title>
+	<style type="text/css">
+		h1{
+			color: red;
+			font-size: 25px;
+			margin: 20px;
+			margin-left: 200px;
+			position: absolute;
+		}
+		#box{
+			margin: 50px;
+			margin-left: 200px;
+			position: absolute;
+
+
+		}
+	</style>
+</head>
+<body>	
+		<h1>Absent students</h1>
+		<!-- <input type="textarea" id="box" size="2500" ><br/> -->
+		<textarea id="box" rows="10" cols="58"></textarea><br/>
+		
+		 <script>
+        for (i = 101; i <= 159; i++) {
+            document.write("<input checked type='checkbox' onclick='check(this)' value='" + i + "'> " + i + " </br>");
+        }
+        for (i = 201; i <= 259; i++) {
+            document.write("<input checked type='checkbox' onclick='check(this)' value='" + i + "' >" + i + "</br>");
+        }
+        for (i = 301; i <= 359; i++) {
+            document.write("<input checked type='checkbox' onclick='check(this) ' value='" + i + "' >" + i + "</br>");
+        }
+
+        for (i = 401; i <= 459; i++) {
+            document.write("<input checked type='checkbox' onclick='check(this) ' value='" + i + "' >" + i + "</br>");
+        }
+
+        function check(a) {
+            if (a.checked) {
+            	// r=document.getElementById('box').value ;
+            	// document.getElementById('box').value=r.substr(0 , r.length-5)
+                
+                //only work when last unchecked time checked
+                 
+            } else {
+            	document.getElementById('box').innerHTML += a.value +",";
+                
+               
+            }
+        }
+    </script>
+
+</body>
+</html>

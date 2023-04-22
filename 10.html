@@ -1,0 +1,24 @@
+<!-- 10.Write a JavaScript to take 2 digit number and then separate these 2 digits,
+then multiply first digit by itself for second digit times. (for example, 23
+should be separated as 2 and 3. 2 should multiply with itself 3 times). -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MUL 2digit</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		n = parseInt(prompt("Enter the Two digits number only : "));
+	
+		last = n%10;
+		first = parseInt(n/10);
+	
+		MUL = first * last;
+
+		document.write("Multiplication of two digit number is : "+MUL);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- 16.WAP to demonstrate the use of various inbuilt functions on an array, like 
+push, pop, sort, etc. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sort Array</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		a = [];
+		size = parseInt(prompt("Enter the size of the array : "));
+
+		for(i=0; i<size; i++)
+		{
+				a[i] = prompt("a["+i+"] : ");
+		}
+
+		a.push(21);
+		document.write("Array after pushhing : "+a+"<br/>");
+		a.pop();
+		document.write("Array after Popping : "+a+"<br/>");
+		a.sort();
+		document.write("Array after Sortting : "+a+"<br/>");
+
+	</script>
+</body>
+</html>

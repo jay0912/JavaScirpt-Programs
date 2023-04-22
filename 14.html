@@ -1,0 +1,25 @@
+<!-- 14.WAP to read an array from the user and sort them in ascending order -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sort Array</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		a = [];
+		size = parseInt(prompt("Enter the size of the array : "));
+
+		for(i=0; i<size; i++)
+		{
+				a[i] = prompt("a["+i+"] : ");
+		}
+
+		a.sort();
+
+		document.write("Sorted Array : "+a);
+
+	</script>
+</body>
+</html>
